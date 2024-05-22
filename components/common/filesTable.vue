@@ -84,19 +84,19 @@ import { Toggle } from "@/components/ui/toggle";
                   </th>
                   <th
                     scope="col"
-                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider sm:block hidden"
+                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider mobile-hidden"
                   >
                     Page count
                   </th>
                   <th
                     scope="col"
-                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider sm:block hidden"
+                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider mobile-hidden"
                   >
                     File size
                   </th>
                   <th
                     scope="col"
-                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider sm:block hidden"
+                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider mobile-hidden"
                   >
                     File format
                   </th>
@@ -117,12 +117,12 @@ import { Toggle } from "@/components/ui/toggle";
                           {{ item.fileName }}
                         </div>
                       </td>
-                      <td class="px-6 py-4 whitespace-nowrap sm:block hidden">
+                      <td class="px-6 py-4 whitespace-nowrap mobile-hidden">
                         <div class="text-sm text-gray-500">
                           {{ item.countPages }}
                         </div>
                       </td>
-                      <td class="px-6 py-4 whitespace-nowrap sm:block hidden">
+                      <td class="px-6 py-4 whitespace-nowrap mobile-hidden">
                         <span
                           class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800"
                         >
@@ -130,7 +130,7 @@ import { Toggle } from "@/components/ui/toggle";
                         </span>
                       </td>
                       <td
-                        class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 uppercase sm:block hidden"
+                        class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 uppercase mobile-hidden"
                       >
                         {{ item.fileFormat }}
                       </td>
@@ -178,5 +178,10 @@ import { Toggle } from "@/components/ui/toggle";
   top: 50%;
   left: 45.7%;
   transform: translate(-50%, -50%);
+}
+@media (max-width: 1024px) {
+  .mobile-hidden {
+    display: none;
+  }
 }
 </style>
