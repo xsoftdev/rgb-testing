@@ -8,7 +8,7 @@ import { Input } from "~/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Toggle } from "~/components/ui/toggle";
 import { useToast } from "@/components/ui/toast/use-toast";
-import {useRouter} from 'vue-router';
+import { useRouter } from "vue-router";
 
 const router = useRouter();
 const { toast } = useToast();
@@ -105,9 +105,9 @@ const createAccount = async () => {
       res.json().then((data) => {
         let response = data.message;
         if (data.status === 200) {
-          localStorage.removeItem('session');
+          localStorage.removeItem("session");
           localStorage.setItem("session", response.session);
-          router.push("/dashboard");
+          router.push("/auth/login");
         } else {
           return;
         }
