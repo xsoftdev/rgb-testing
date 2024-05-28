@@ -1,5 +1,6 @@
-import jwt from "jsonwebtoken";
-import User from "./models/user.model";
+import jwt from 'jsonwebtoken';
+import User from './models/user.model';
+import File from '../files/models/file.model';
 
 interface EventContext {
   params?: {
@@ -19,24 +20,24 @@ export default defineEventHandler(async (event: { context: EventContext }) => {
     const id = event.context.params?.id;
     let userId = id;
 
-    if (id && id.length !== 24) { // Standard MongoDB ObjectId length is 24 characters
+    if (id && id.length !== 24) {
       const decoded = jwt.decode(id) as DecodedJWT | null;
       if (decoded && decoded.userId) {
         userId = decoded.userId;
       } else {
         return {
           status: 401,
-          message: "Invalid session token",
+          message: 'Invalid session token',
           ok: false,
         };
       }
     }
 
-    const user = await User.findById(userId).populate("files");
+    const user = await User.findById(userId).populate('files');
     if (!user) {
       return {
         status: 404,
-        message: "User not found",
+        message: 'User not found',
         ok: false,
       };
     }

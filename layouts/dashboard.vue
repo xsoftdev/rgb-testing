@@ -149,7 +149,6 @@ onMounted(async () => {
                     </div>
                     <div class="flex flex-col space-y-1">
                       <p class="underline font-bold">{{ userData.email }}</p>
-                      <p>Count files: {{ userData.files.length }}</p>
                     </div>
                   </div>
                   <div>

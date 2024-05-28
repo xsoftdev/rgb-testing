@@ -22,7 +22,7 @@ const FileSchema = new Schema<IFile>({
     type: String,
     required: true,
   },
-  authorID: [{ type: Schema.Types.ObjectId, ref: "User" }],
+  authorID: { type: Schema.Types.ObjectId, ref: "User" },
 });
 
 const fileModel = model("File", FileSchema);

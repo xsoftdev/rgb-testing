@@ -1,5 +1,6 @@
-import { Schema, model } from "mongoose";
-import { IUser } from "~/server/interfaces/IUser.interface";
+import { Schema, model } from 'mongoose';
+import { IUser } from '~/server/interfaces/IUser.interface';
+import File from '../../files/models/file.model';
 
 const UserSchema = new Schema<IUser>({
   email: {
@@ -17,11 +18,11 @@ const UserSchema = new Schema<IUser>({
   files: [
     {
       type: Schema.Types.ObjectId,
-      ref: "File",
+      ref: 'File',
     },
   ],
 });
 
-const userModel = model("User", UserSchema);
+const userModel = model('User', UserSchema);
 
 export default userModel;
